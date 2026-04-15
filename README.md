@@ -17,3 +17,17 @@ Dont look at this! Im not proud of this, but I could not bare NetSuites UI, so I
 This extension is mainly created to work with NetSuites Redwood UI.
 
 Please send MRs/PRs if you have any improvements or want to clean up the code.
+
+## Improvements that are needed
+
+### Fine tuning the loading overlay
+
+The loading overlay needs to be fine tuned based on what is loading. UI is also ugly.
+
+### Code is a mess
+
+The code is horrible.
+
+### Turn on/off features
+
+Would be nice to have a settings page where you can turn on/off features.
