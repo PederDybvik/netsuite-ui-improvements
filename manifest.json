@@ -1,0 +1,39 @@
+{
+    "manifest_version": 3,
+    "name": "NetSuite Toolkit (Loader + JSON Formatter)",
+    "version": "1.1.0",
+    "description": "Adds a smart loading overlay and prettifies JSON in NetSuite error messages.",
+    "permissions": ["webNavigation", "tabs"],
+    "host_permissions": ["*://*.netsuite.com/*"],
+    "background": {
+        "scripts": ["background.js"],
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*.netsuite.com/*"],
+            "js": ["loader-content.js"],
+            "run_at": "document_start"
+        },
+        {
+            "matches": ["*://*.netsuite.com/*"],
+            "js": ["json-formatter.js"],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["page-bridge.js"],
+            "matches": ["*://*.netsuite.com/*"]
+        }
+    ],
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "netsuite-toolkit@example.com"
+        }
+    },
+    "action": {
+        "default_title": "NetSuite Toolkit"
+    }
+}
+
